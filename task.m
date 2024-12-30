@@ -30,7 +30,7 @@ grid on;
 
 % 设计数字直流陷波器
 % 系统函数 H(z) = (1 - z^(-1)) / (1 - a * z^(-1))
-a = 0.99;  % 陷波器极点参数
+a = 0.992;  % 陷波器极点参数
 b_dc = [1, -1];
 a_dc = [1, -a];
 filtered_data_dc = filter(b_dc, a_dc, data);
