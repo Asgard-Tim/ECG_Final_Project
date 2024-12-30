@@ -78,8 +78,6 @@ float FIR_Filter(float in)
 
     queuePop(&FIRQueue);      // 先弹出一个
     queuePush(&FIRQueue, in); // 向其中加入新来的元素
-    // queuePrint(&FIRQueue);
-    // printf("--------------\n");
 
     double sum = 0;
     int count  = hLength - 1; // 指向h末尾的位置
@@ -106,8 +104,6 @@ float FIR_Filter(float in)
     }
     FIRResult = sum * coefficient;
     return FIRResult;
-
-    // printf("%d\r\n", FIRResult);
 }
 
 /*

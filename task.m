@@ -45,20 +45,8 @@ ylabel('幅值');
 grid on;
 
 %设计 FIR 数字低通滤波器
-cutoff = 35;         % 截止频率 (Hz)
-transition_width = 10;  % 过渡带宽度 (Hz)
-numtaps = 64;        % 滤波器阶数
-fir_coeff = fir1(numtaps, cutoff / (fs / 2), hamming(numtaps + 1));  % Hamming窗设计
-filtered_data_lp = filter(fir_coeff, 1, filtered_data_dc);
-
-% 绘制 FIR 滤波器频率响应
-[h, w] = freqz(fir_coeff, 1, 1024, fs);
-figure;
-plot(w, 20*log10(abs(h)));
-title('FIR 低通滤波器频率响应');
-xlabel('频率 (Hz)');
-ylabel('增益 (dB)');
-grid on;
+fir_filter = fir_filter();
+filtered_data_lp = filter(fir_filter, filtered_data_dc);
 
 % 绘制低通滤波后的频谱
 spectrum_lp = abs(fft(filtered_data_lp));

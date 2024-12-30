@@ -215,5 +215,4 @@ static float Cal_PeakToPeak(float *samples, uint16_t sample_count)
     }
     float peak_to_peak = (max - min);
     return peak_to_peak;
-    // printf("Peak to peak: %d\n", peak_to_peak);
 }
